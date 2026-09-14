@@ -16,6 +16,7 @@ import TeamTree from "../components/TeamTree";
 import CeoSection from "./CeoSection";
 import ExecutiveSummary from "./ExecutiveSummary";
 import FutureGoals from "./FutureGoals";
+import BigTextSection from "./BigTextSection";
 
 const sections = [
   "company-intro",
@@ -71,9 +72,9 @@ const CompanyProfile = () => {
 
       <AboutCompany />
 
-      <ExecutiveSummary/>
+      <ExecutiveSummary />
 
-      <CeoSection/>
+      <CeoSection />
 
       <Services />
 
@@ -99,7 +100,8 @@ const CompanyProfile = () => {
             </h2>
 
             <p className="mx-auto mt-4 max-w-3xl text-slate-500 text-base md:text-lg">
-              Explore our team structure and discover the people behind our success.
+              Explore our team structure and discover the people behind our
+              success.
             </p>
           </div>
 
@@ -109,9 +111,11 @@ const CompanyProfile = () => {
 
       <WhyAhaan />
 
-      <FutureGoals/>
+      <FutureGoals />
 
       <ContactCTA />
+
+      <BigTextSection />
     </main>
   );
 };
