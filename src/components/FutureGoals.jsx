@@ -52,7 +52,7 @@ const FutureGoals = () => {
                 Our Roadmap
               </p>
             </div>
-            <h2 className="mt-2 text-4xl font-black uppercase tracking-tight text-[#111111] md:text-5xl lg:text-6xl">
+            <h2 className="mt-2 text-4xl font-black capitalize tracking-tight text-[#111111] md:text-5xl lg:text-6xl">
               Future Goals
             </h2>
           </div>
