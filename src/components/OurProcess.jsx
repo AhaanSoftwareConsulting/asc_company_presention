@@ -75,12 +75,12 @@ const OurProcess = () => {
   return (
     <section
       id="process"
-      className="bg-[#FAF9F5] px-4 py-16 md:px-8 md:py-24 overflow-hidden"
+      className="px-4 py-16 md:px-8 md:py-24 overflow-hidden"
     >
       <div className="mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="inline-block rounded-full bg-[#C48A18]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-[#C48A18]">
+          <span className="inline-block rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-[#C48A18]">
             How We Work
           </span>
           <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-[#111111] md:text-5xl">
