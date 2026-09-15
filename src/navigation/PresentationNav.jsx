@@ -1,3 +1,4 @@
+import logo from "../assets/asc.webp";
 import { useEffect, useState } from "react";
 
 const PresentationNav = () => {
@@ -20,7 +21,7 @@ const PresentationNav = () => {
     document.getElementById(id)?.scrollIntoView({
       behavior: "smooth",
     });
-    setIsMobileMenuOpen(false); // মোবাইল মেনু খুললে অপশনে ক্লিক করলে বন্ধ হয়ে যাবে
+    setIsMobileMenuOpen(false);
   };
 
   const navItems = [
@@ -45,10 +46,14 @@ const PresentationNav = () => {
         {/* Brand Logo */}
         <button
           onClick={() => goTo("company-intro")}
-          className="group text-2xl font-black tracking-tight text-[#111111] transition duration-300 hover:scale-105"
+          className="group flex items-center transition duration-300 hover:scale-105"
+          aria-label="Ahaan Software Consulting"
         >
-          AHAAN
-          <span className="text-[#C48A18] inline-block transition-transform duration-300 group-hover:translate-x-0.5">.</span>
+          <img
+            src={logo}
+            alt="Ahaan Software Consulting"
+            className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+          />
         </button>
 
         {/* Desktop Navigation */}
@@ -57,37 +62,54 @@ const PresentationNav = () => {
             <button
               key={id}
               onClick={() => goTo(id)}
-              className="relative text-sm font-bold text-slate-700 tracking-wide transition-colors duration-300 hover:text-[#C48A18] group py-1"
+              className="group relative py-1 text-sm font-bold tracking-wide text-slate-700 transition-colors duration-300 hover:text-[#C48A18]"
             >
               {label}
-              {/* Bottom Animated Line on Hover */}
-              <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#C48A18] transition-all duration-300 ease-out group-hover:w-full rounded-full" />
+
+              <span className="absolute bottom-0 left-0 h-[2px] w-0 rounded-full bg-[#C48A18] transition-all duration-300 ease-out group-hover:w-full" />
             </button>
           ))}
         </nav>
 
-        {/* Mobile Hamburger Button */}
+        {/* Mobile Hamburger */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="flex flex-col justify-center items-center w-10 h-10 rounded-lg lg:hidden hover:bg-gray-100 transition focus:outline-none"
+          className="flex h-10 w-10 flex-col items-center justify-center rounded-lg transition hover:bg-gray-100 focus:outline-none lg:hidden"
           aria-label="Toggle Menu"
         >
-          <span className={`block w-6 h-0.5 bg-slate-800 transition-transform duration-300 ${isMobileMenuOpen ? "rotate-45 translate-y-1.5" : "-translate-y-1"}`} />
-          <span className={`block w-6 h-0.5 bg-slate-800 transition-opacity duration-300 ${isMobileMenuOpen ? "opacity-0" : "opacity-100"}`} />
-          <span className={`block w-6 h-0.5 bg-slate-800 transition-transform duration-300 ${isMobileMenuOpen ? "-rotate-45 -translate-y-1.5" : "translate-y-1"}`} />
-        </button>
+          <span
+            className={`block h-0.5 w-6 bg-slate-800 transition-transform duration-300 ${
+              isMobileMenuOpen
+                ? "translate-y-1.5 rotate-45"
+                : "-translate-y-1"
+            }`}
+          />
 
+          <span
+            className={`block h-0.5 w-6 bg-slate-800 transition-opacity duration-300 ${
+              isMobileMenuOpen ? "opacity-0" : "opacity-100"
+            }`}
+          />
+
+          <span
+            className={`block h-0.5 w-6 bg-slate-800 transition-transform duration-300 ${
+              isMobileMenuOpen
+                ? "-translate-y-1.5 -rotate-45"
+                : "translate-y-1"
+            }`}
+          />
+        </button>
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white/95 backdrop-blur-xl border-b border-gray-100 shadow-xl px-6 py-6 transition-all">
+        <div className="border-b border-gray-100 bg-white/95 px-6 py-6 shadow-xl backdrop-blur-xl lg:hidden">
           <nav className="flex flex-col gap-4">
             {navItems.map(([label, id]) => (
               <button
                 key={id}
                 onClick={() => goTo(id)}
-                className="text-left text-base font-semibold text-slate-800 hover:text-[#C48A18] transition py-2 border-b border-gray-50"
+                className="border-b border-gray-50 py-2 text-left text-base font-semibold text-slate-800 transition hover:text-[#C48A18]"
               >
                 {label}
               </button>
